@@ -10,7 +10,7 @@ pipeline {
 
                 script {
                     def customImage = docker.build("ibera/${params.imageName}:v${env.BUILD_ID}", "./dockerfiles/${params.imageName}")
-		                docker.withRegistry('https://index.docker.io/v1/', 'e43ae325-cfb0-4d39-baf0-dde93e753d23'){
+		                docker.withRegistry('https://index.docker.io/v1/', '36a499f9-b297-4ea6-a1cd-75d3507ce4ef'){
                             customImage.push()
 		                }
                 }
